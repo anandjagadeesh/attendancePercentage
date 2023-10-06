@@ -12,7 +12,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4"><img src="attendance.png" alt="attendance icon" style="height: 1em; vertical-align: middle; margin-right: 10px;"> Attendance Calculator</h1>
-		<p><span style="color: gray;"><strong>NOTE:</strong> This is a simple attendance percentage calculator for a module or subject. For values of classes, enter the number of classes for best results. That is, if a subject was taught for 3 days and there were 3 classes per day, enter 9 for number of classes. Please note that this is provided as-is with no guarantee. This site was not created by experts. Exact values may differ based on how a particular university calculate days and classes. Please consult your teacher or tutor for exact values and advise.</span></p>
+		<p><span style="color: gray;"><strong>NOTE:</strong> This is a simple attendance percentage calculator for a module or subject. If a subject was taught for 3 days and there were 3 classes per day, enter 9 for number of classes.</span></p>
         <form id="attendanceForm">
             <div class="mb-3">
                 <label for="threshold" class="form-label">Required Attendance Percentage:</label>
@@ -47,6 +47,7 @@
 	      </div>
 	      <div class="modal-body" id="modal-content"></div>
 	      <div class="modal-footer">
+		<p><span style="color: gray;">Please note that this is provided as-is with no guarantee. This site was not created by experts. Exact values may differ based on how a particular university calculate days and classes. Please consult your teacher or tutor for exact values and advise.</span>span></p>
 	        <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
 	      </div>
 	    </div>
