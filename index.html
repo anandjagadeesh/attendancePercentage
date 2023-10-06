@@ -42,8 +42,24 @@
             <button type="button" class="btn btn-primary" onclick="calculateAttendance()" style="background-color: #545454; border-color: #545454">Calculate Percentages</button>
         </form>
 
-        <div class="mt-4" id="results"></div>
+<!--         <div class="mt-4" id="results"></div> -->
     </div>
+    <div class="modal fade" id="myModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title">Attendance Percentage Calculation</h4>
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+	      <div class="modal-body" id="modal-content">
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #545454; border-color: #545454">Close</button>
+	      </div>
+	    </div>
+	  </div>
+    </div>
+
 
     <!-- Include Bootstrap JS (Optional, only needed for Bootstrap features like modals) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
@@ -60,12 +76,12 @@
             const requiredAttendance = (threshold / 100) * totalDays;
       			const attendedDaysWithLOA = attendedSoFar + (daysRemaining - leaveDays);
       			const newPercentagePredicted = (attendedDaysWithLOA / totalDays) * 100;
-      			leavesLeft = ((newPercentagePredicted - threshold) / 100) * totalDays;
-      			currAttendanceString = `<p>Current attendance percentage: <strong><span style="color: green;">${currentPercentage.toFixed(2)}%</span></strong></p>`;
+      			var leavesLeft = ((newPercentagePredicted - threshold) / 100) * totalDays;
+      			var currAttendanceString = `<p>Current attendance percentage: <strong><span style="color: green;">${currentPercentage.toFixed(2)}%</span></strong></p>`;
       			if ((currentPercentage - threshold) < 0) {
       				currAttendanceString = `<p>Current attendance percentage: <strong><span style="color: red;"> ${currentPercentage.toFixed(2)}%</span></strong></p>`;
       			}
-      			newAttendanceString = `<p><strong>Predicted attendance percentage after leave of absence:
+      			var newAttendanceString = `<p><strong>Predicted attendance percentage after leave of absence:
       				<span style="color: green;">${newPercentagePredicted.toFixed(2)}%</span>
       				</strong></p>`;
       			if ((newPercentagePredicted - threshold) < 0) {
@@ -77,8 +93,15 @@
       				leavesLeft = 0;
       			}
       
-            const resultsDiv = document.getElementById("results");
-            resultsDiv.innerHTML = `
+            // const resultsDiv = document.getElementById("results");
+            // resultsDiv.innerHTML = `
+            // <p>Required attendance percentage: ${threshold.toFixed(2)}%</p>
+            // ${currAttendanceString}
+            // ${newAttendanceString}
+            // <p>Remaining leaves you can take by staying above required attendance threshold: ${leavesLeft.toFixed(0)}</p>
+            // `;
+	    	const modalContent = document.getElementById('modal-content');
+			modalContent.innerHTML = `
             <p>Required attendance percentage: ${threshold.toFixed(2)}%</p>
             ${currAttendanceString}
             ${newAttendanceString}
