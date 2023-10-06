@@ -106,8 +106,9 @@
 	      ${newAttendanceString}
 	      ${leavesLeftString}
 	    `;
-	    document.getElementById("attendanceModal").classList.add("show");
 		document.getElementById("modalOverlay").style.display = "block";
+	    document.getElementById("attendanceModal").classList.add("show");
+		document.getElementById("attendanceModal").style.display = "block";
 	  }
 	  function closeModal() {
 		  document.getElementById("attendanceModal").classList.remove("show");
