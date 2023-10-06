@@ -45,15 +45,15 @@
         <div class="mt-4" id="results"></div>
     </div>
     <div class="modal fade" id="attendanceModal" tabindex="-1" aria-labelledby="attendanceModal" aria-hidden="true">
-	  <div class="modal-dialog">
+	  <div class="modal-dialog" style="width: 100%; max-width: 100%;">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Attendance Percentage Calculation</h5>
-	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	        <h5 class="modal-title" id="exampleModalLabel">Calculated Percentages</h5>
+	        <button type="button" class="btn-close" onclick="closeModal()" aria-label="Close"></button>
 	      </div>
 	      <div class="modal-body" id="modal-content"></div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-secondary" onclick="closeModal()">Close</button>
 	      </div>
 	    </div>
 	  </div>
@@ -107,6 +107,10 @@
 	    `;
 	    document.getElementById("attendanceModal").classList.add("show");
   		document.getElementById("attendanceModal").style.display = "block";
+	  }
+	  function closeModal() {
+		  document.getElementById("attendanceModal").classList.remove("show");
+		  document.getElementById("attendanceModal").style.display = "none";
 	  }
 	</script>
 
