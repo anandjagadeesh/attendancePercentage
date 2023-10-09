@@ -72,23 +72,23 @@
 	      leavesLeft = 0;
 	    }
 	    const currAttendanceString = `
-	      <p>Current Attendance Percentage: <strong><span style="color: ${
+	      <p>Current Attendance Percentage (CAP):<br><strong><span style="color: ${
 	        currentPercentage < threshold ? "red" : "green"
 	      };">${currentPercentage.toFixed(2)}%</span></strong></p>
 	    `;
 	    const newAttendanceString = `
-	      <p><strong>Predicted Attendance Percentage (PAP) after absence:
+	      <p><strong>Predicted Attendance Percentage (PAP) after absence:<br>
 	        <span style="color: ${
 	          newPercentagePredicted < threshold ? "red" : "green"
 	        };">${newPercentagePredicted.toFixed(2)}%</span>
 	        </strong></p>
 	    `;
 	    const leavesLeftString = `
-	      <p>Remaining leaves you can take while keeping percent above ${threshold.toFixed(2)}: <strong> ${leavesLeft.toFixed(0)} </strong></p>
+	      <p>Remaining leaves you can take while keeping percent above ${threshold.toFixed(2)}%:<br> <strong> ${leavesLeft.toFixed(0)} </strong></p>
 	    `;
 	    const modalContent = document.getElementById("modal-content");
 	    modalContent.innerHTML = `
-	      <p>Required attendance percentage: ${threshold.toFixed(2)}%</p>
+	      <p>Required Attendance Percentage (RAP):<br> ${threshold.toFixed(2)}%</p>
 	      ${currAttendanceString}
 	      ${newAttendanceString}
 	      ${leavesLeftString}
