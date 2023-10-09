@@ -67,7 +67,7 @@
 	    const currentPercentage = (attendedSoFar / daysSoFar) * 100;
 	    const attendedDaysWithLOA = attendedSoFar + (daysRemaining - leaveDays);
 	    const newPercentagePredicted = (attendedDaysWithLOA / totalDays) * 100;
-	    let leavesLeft = ((newPercentagePredicted - threshold) / 100) * totalDays;
+	    let leavesLeft = (((newPercentagePredicted - threshold) / 100) * totalDays) - 1;
 	    if (leavesLeft < 0) {
 	      leavesLeft = 0;
 	    }
