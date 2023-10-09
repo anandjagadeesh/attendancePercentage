@@ -15,7 +15,7 @@
 		<p><span style="color: gray;"><strong>NOTE:</strong> This is a simple attendance percentage calculator for a module or subject. If a subject was taught for 3 days and there were 3 classes per day, enter 9 for number of classes. Read disclaimer in the footer before proceeding.</span></p>
         <form id="attendanceForm">
             <div class="mb-3">
-                <label for="threshold" class="form-label">Required Attendance Percentage:</label>
+                <label for="threshold" class="form-label">Required/Desired Attendance Percentage:</label>
                 <input type="number" id="threshold" class="form-control" min="0" max="100" required>
             </div>
 			<div class="mb-3">
@@ -23,7 +23,7 @@
                 <input type="number" id="attendedSoFar" class="form-control" min="0" required>
             </div>
 			<div class="mb-3">
-                <label for="daysSoFar" class="form-label">Total classes, conducted so far:</label>
+                <label for="daysSoFar" class="form-label">Total classes conducted, so far:</label>
                 <input type="number" id="daysSoFar" class="form-control" min="0" required>
             </div>
 			<div class="mb-3">
@@ -72,21 +72,19 @@
 	      leavesLeft = 0;
 	    }
 	    const currAttendanceString = `
-	      <p>Current attendance percentage: <strong><span style="color: ${
+	      <p>Current Attendance Percentage: <strong><span style="color: ${
 	        currentPercentage < threshold ? "red" : "green"
 	      };">${currentPercentage.toFixed(2)}%</span></strong></p>
 	    `;
 	    const newAttendanceString = `
-	      <p><strong>Predicted attendance percentage after leave of absence:
+	      <p><strong>Predicted Attendance Percentage (PAP) after absence:
 	        <span style="color: ${
 	          newPercentagePredicted < threshold ? "red" : "green"
 	        };">${newPercentagePredicted.toFixed(2)}%</span>
 	        </strong></p>
 	    `;
 	    const leavesLeftString = `
-	      <p>Remaining leaves you can take by staying above required attendance threshold: ${leavesLeft.toFixed(
-	        0
-	      )}</p>
+	      <p>Remaining leaves you can take while keeping percent above ${threshold.toFixed(2): <strong> ${leavesLeft.toFixed(0)} </strong></p>
 	    `;
 	    const modalContent = document.getElementById("modal-content");
 	    modalContent.innerHTML = `
