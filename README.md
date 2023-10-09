@@ -1,4 +1,4 @@
-# Simple Attendance Calculator
+# Attendance Calculator
 
 This is a simple attendance percentage calculator for a module or subject. For values of classes, enter the number of classes for best results. That is, if a subject was taught for 3 days and there were 3 classes per day, enter 9 for number of classes.
 
